@@ -1,0 +1,765 @@
+/* General */
+@import url('/node_modules/font-awesome/css/font-awesome.min.css');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    /* Sin fondo */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
+    position: absolute;
+    /* Lo colocamos por encima de la imagen */
+    top: 0;
+    left: 0;
+}
+
+/* Sección de la izquierda (navegación) */
+header .nav-left {
+    display: flex;
+    align-items: center;
+    margin-left: -2rem;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header .nav-links li a {
+    color: #EDEDED;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+header .nav-links li a:hover {
+    color: #FF5722;
+}
+
+/* Sección del logo (centrado) */
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-grow: 1; */
+    margin-right: 5rem;
+}
+
+header .logo img {
+    height: 100px;
+    /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+/* Sección de la derecha (redes sociales) */
+header .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 5rem;
+}
+
+header .nav-right a {
+    color: #EDEDED;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+header .nav-right a:hover {
+    color: #FF5722;
+}
+
+/* Estilo para íconos usando FontAwesome */
+header .fa {
+    font-size: 1.5rem;
+    /* Ajusta el tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+header .fa:hover {
+    color: #FF5722;
+}
+
+/* Agregar sombra sutil si deseas para mejorar la visibilidad */
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegúrate de que la sección de "presentacion" tenga suficiente espacio por debajo del header */
+#presentacion {
+    padding-top: 60px;
+    /* Ajusta según el tamaño del header */
+}
+
+/* Para hacer que el texto en el header se lea bien sobre la imagen de fondo */
+header .nav-links li a,
+header .nav-right a {
+    color: #EDEDED;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Agrega sombra al texto para mejorar la visibilidad */
+}
+
+/* Presentación */
+#presentacion {
+    background: url('/img1.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 773px;
+    background-attachment: scroll;
+
+}
+
+.presentacion img {
+    top: 1rem;
+    height: 773px;
+    background-attachment: scroll;
+}
+
+#presentacion::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#presentacion .overlay {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+#presentacion h1 {
+    font-size: 3rem;
+    color: #FF5722;
+    margin: 0;
+}
+
+#presentacion h1 span {
+    color: #EDEDED;
+}
+
+#presentacion p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+#presentacion .btn {
+    padding: 10px 20px;
+    background: #FF5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#presentacion .btn:hover {
+    background: #D44016;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del contenedor */
+.scroll-down-indicator {
+    position: relative;
+    /* Asegura que los hijos puedan posicionarse dentro del contenedor */
+    display: flex;
+    /* Usa flexbox para centrar la flecha */
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    /* Asegura que el contenedor esté centrado */
+}
+
+.scroll-down-indicator .circle {
+    position: relative;
+    width: 60px;
+    /* Tamaño del círculo */
+    height: 60px;
+    border-radius: 50%;
+    /* Hace que sea un círculo */
+    background-color: #0C2748;
+    /* Color de fondo del círculo */
+    display: flex;
+    /* Centra el icono dentro del círculo */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra moderna */
+}
+
+.scroll-down-indicator .circle i {
+    color: #fff;
+    /* Color del icono */
+    font-size: 24px;
+    /* Tamaño del icono */
+    animation: moveDown 1s infinite ease-in-out;
+    /* Animación de movimiento */
+}
+
+/* Animación de la flecha */
+@keyframes moveDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+/* Animación */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+        /* Mueve hacia abajo */
+    }
+}
+
+/* Trabajos */
+#trabajos {
+    padding: 36px 20px;
+    background: #fafafa;
+    text-align: center;
+    height: 43rem;
+}
+
+.trabajos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 7rem;
+}
+
+.trabajo-card {
+    width: 300px;
+    background: #1A3A5C;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.trabajo-card:hover {
+    transform: translateY(-10px);
+}
+
+.trabajo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trabajo-card p {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #EDEDED;
+}
+
+#trabajos h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: -70px;
+    /* padding-top: 6rem; */
+    padding: -5rem;
+    color: #333;
+    margin-top: 10rem;
+
+}
+
+/*servicios*/
+
+.servicios {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    /* Fondo suave */
+}
+
+.servicios h2 {
+    font-size: 2.5rem;
+    color: #0C2748;
+    /* Azul oscuro */
+    margin-bottom: 40px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas fijas */
+    gap: 30px;
+    /* Espaciado entre los elementos */
+    justify-items: center;
+}
+
+.servicio-item {
+    background: #fff;
+    /* Fondo blanco */
+    
+    border-radius: 10px;
+    
+    padding: 20px;
+    max-width: 300px;
+    /* Ancho máximo por servicio */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicio-item:hover {
+    transform: translateY(-10px);
+    /* Movimiento hacia arriba al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.servicio-item i {
+    font-size: 2.5rem;
+    color: #FF5722;
+    /* Iconos azul oscuro */
+    margin-bottom: 15px;
+}
+
+.servicio-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.servicio-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Equipo */
+#equipo {
+    padding: 50px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.equipo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.humnal {}
+
+.card {
+    width: 250px;
+    text-align: center;
+    background: #1A3A5C;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 62%;
+    height: 177px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    color: #FF5722;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #EDEDED;
+}
+
+/* Contacto */
+#contacto {
+    padding: 50px 20px;
+    background: #0C2748;
+    text-align: center;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contacto input,
+#contacto textarea,
+#contacto button {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+#contacto input,
+#contacto textarea {
+    background: #1A3A5C;
+    color: #EDEDED;
+}
+
+#contacto button {
+    background: #FF5722;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contacto button:hover {
+    background: #D44016;
+    transition: background-color 0.3s ease;
+}
+
+#contacto input:focus,
+#contacto textarea:focus,
+#contacto button:focus {
+    outline: 3px solid #FF5722;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #0C1F33;
+    color: #EDEDED;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+footer .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1A3A5C;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+footer .icon:hover {
+    background: #FF5722;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fafafa;
+    /* Fondo claro */
+    padding: 20px 78px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    /* Línea inferior */
+    margin: 40px 0;
+}
+
+.texto-separador {
+    flex: 1;
+    max-width: 85%;
+    /* Asegura que el texto no ocupe todo el espacio */
+}
+
+.texto-separador h2 {
+    font-size: 1.6rem;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.texto-separador p {
+    font-size: 1.2rem;
+    color: #333;
+    /* Gris oscuro */
+    margin: 0;
+}
+
+.imagen-separador {
+    flex: 0 0 auto;
+    /* La imagen mantiene su tamaño natural */
+    margin-left: 20px;
+    /* Espaciado entre texto e imagen */
+}
+
+.imagen-separador img {
+    max-width: 250px;
+    /* Tamaño de la imagen */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+/* ADAPTACION A MOVILES */
+
+/* Aseguramos que la página se vea bien en dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    header .nav-links li a,
+    header .nav-right a,
+    #presentacion h1,
+    #trabajos h2,
+    .trabajo-card p,
+    .card h3 {
+        font-size: 1rem;
+        /* Ajustamos el tamaño de texto */
+    }
+}
+
+/* Hacemos el header más compacto y la navegación más accesible */
+@media (max-width: 768px) {
+    header {
+        display: none;
+    }
+
+    header .nav-left,
+    header .nav-right {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    header .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+        /* La navegación será vertical */
+        gap: 10px;
+        align-items: center;
+    }
+
+    header .nav-links li a {
+        font-size: 1.2rem;
+        /* Tamaño de texto más grande en móvil */
+    }
+
+    /* Ajustamos el tamaño de los íconos */
+    header .fa {
+        font-size: 1.2rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en pantallas medianas */
+    }
+}
+
+/* Ajustamos la presentación para pantallas pequeñas */
+@media (max-width: 768px) {
+    #presentacion {
+        height: 500px;
+        /* Reducimos la altura */
+    }
+
+    #presentacion h1 {
+        font-size: 2rem;
+        /* Reducimos el tamaño del título */
+    }
+
+    #presentacion p {
+        font-size: 1rem;
+    }
+
+    #presentacion .btn {
+        width: 100%;
+        /* Hacemos el botón más grande */
+        padding: 12px 20px;
+    }
+
+    .presentacion img {
+        height: 100%;
+        object-fit: cover;
+        /* Aseguramos que la imagen cubra el contenedor */
+    }
+}
+
+/* Hacemos que las tarjetas se ajusten a pantallas pequeñas */
+@media (max-width: 768px) {
+    #trabajos {
+        padding: 30px 10px;
+        background: #fafafa;
+        text-align: center;
+        height: 75rem;
+    }
+
+    .trabajos-container {
+
+        /* Las tarjetas se apilan verticalmente */
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 6rem;
+        /* margin-top: -2rem;
+    }
+
+    .trabajo-card {
+        width: 95%;
+        /* Las tarjetas ocupan todo el ancho */
+        height: auto;
+        /* No tenemos un tamaño fijo */
+    }
+
+    .trabajo-card img {
+        height: 200px;
+        /* Ajustamos el tamaño de la imagen */
+    }
+}
+
+/* Hacemos las tarjetas de equipo más pequeñas */
+@media (max-width: 768px) {
+    #equipo {
+        padding: 30px 10px;
+    }
+
+    .equipo-container {
+
+        /* Las tarjetas se apilan verticalmente */
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+        /* Hacemos las tarjetas más pequeñas */
+        padding: 10px;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+        /* Ajustamos el tamaño de las imágenes */
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Hacemos que el formulario se ajuste mejor en pantallas pequeñas */
+@media (max-width: 768px) {
+    #contacto form {
+        width: 94%;
+        padding: 20px;
+    }
+
+
+
+    #contacto button {
+        font-size: 1rem;
+        /* Ajustamos el tamaño de fuente en el botón */
+    }
+}
+
+/* Hacemos que el footer se vea bien en móviles */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer .social-icons {
+
+        gap: 10px;
+    }
+
+    footer .icon {
+        width: 35px;
+        height: 35px;
+        /* Reducimos el tamaño de los íconos */
+    }
+}
+
+/* Ajustes para pantallas extremadamente pequeñas */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        /* Reducimos aún más el tamaño de la fuente */
+    }
+
+    #presentacion h1 {
+        font-size: 1.5rem;
+        /* Título aún más pequeño */
+    }
+
+    #presentacion p,
+    #trabajos h2 {
+        font-size: 1rem;
+        margin-top: 4rem;
+        /* Reducimos el tamaño del texto */
+    }
+
+    .imagen-separador img {
+        display: none;
+    }
+
+    .trabajo-card,
+    .card {
+        width: 100%;
+        /* Las tarjetas ocupan todo el ancho */
+    }
+         .servicios-grid {
+             grid-template-columns: 1fr;
+             /* 1 columna en pantallas pequeñas */
+         }
+}
